@@ -2,6 +2,8 @@ package com.learn.chengzhenxing.reminder;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -28,4 +30,22 @@ public class ReminderActivity extends AppCompatActivity {
         );
         mListView.setAdapter(arrayAdapter);
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case R.id.action_new:
+//                fireCustomDialog(null);
+                Log.d(getLocalClassName(),"create new Reminder");
+                return true;
+            case R.id.action_exit:
+                finish();
+                return true;
+            default:
+                return false;
+        }
+    }
+
+
+
 }
